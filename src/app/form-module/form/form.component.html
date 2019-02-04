@@ -1,0 +1,23 @@
+<form [formGroup]="testForm" (ngSubmit)="submitForm()">
+  <label for="name">имя</label>
+  <input type="text" id="name" formControlName="name" />
+  <br/><br/>
+
+  <label for="email">email</label>
+  <input type="text" id="email" formControlName="email" />
+  <br/><br/>
+
+  <button type="submit">отправить</button>
+</form>
+
+<div *ngIf="formData">
+  <h3>В форму ввели:</h3>
+  <p >
+    Имя: {{ formData.name }}
+  </p>
+  <p >
+    Email: {{ formData.email }}
+  </p>
+
+  <button  (click)="cleanForm()">очистить</button>
+</div>
